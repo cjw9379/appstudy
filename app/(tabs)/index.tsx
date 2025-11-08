@@ -1,23 +1,23 @@
 import { StyleSheet, Text, View } from 'react-native';
 
-export default function HomeScreen() {
+export default function Index(){
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>내 첫 앱!</Text>
-      <Text>여기에 코드를 작성하기 시작하면 됩니다.</Text>
+      <Text style={styles.text}> Hello World!</Text>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
+const styles=StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    backgroundColor: '#5596a5ff',
     alignItems: 'center',
+    justifyContent: 'center'
   },
-  title: {
-    fontSize: 24,
+  text: {
+    fontSize: 50,
     fontWeight: 'bold',
-    marginBottom: 16,
+    color: 'black',
   },
 });
