@@ -1,9 +1,15 @@
+//홈 탭 화면 역할
+
+import { Link } from 'expo-router';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function Index(){
   return (
     <View style={styles.container}>
-      <Text style={styles.text}> Hello World!</Text>
+      <Text style={styles.text}> I'm Home screen</Text>
+      <Link href="/about" style={styles.button}>//버튼
+        Go to About screen
+      </Link>
     </View>
   );
 }
@@ -18,6 +24,12 @@ const styles=StyleSheet.create({
   text: {
     fontSize: 50,
     fontWeight: 'bold',
+    color: 'black',
+  },
+  button: {
+    fontSize: 35,
+    fontWeight: 'bold',
+    textDecorationLine: 'underline',
     color: 'black',
   },
 });
