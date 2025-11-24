@@ -1,5 +1,6 @@
-import { Ionicons } from '@expo/vector-icons';
+import { FontAwesome6, Ionicons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
+
 
 export default function TabLayout(){
   return (
@@ -14,11 +15,15 @@ export default function TabLayout(){
         }}
       />
       <Tabs.Screen
-        name="feed"
+        name="오하아사"
         options={{
-          title: 'Feed',
+          title: '오하아사',
           tabBarIcon: ({color, size})=> (
-            <Ionicons name="list" color={color} size={size}/>
+            <FontAwesome6
+              name="star-of-david"
+              size={size}
+              color={color}
+            />
           ),
         }}
       />
