@@ -1,15 +1,10 @@
 //홈 탭 화면 역할
-
-import { Link } from 'expo-router';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function Index(){
   return (
     <View style={styles.container}>
-      <Text style={styles.text}> I'm Home screen</Text>
-      <Link href="/about" style={styles.button}>//버튼
-        Go to About screen
-      </Link>
+      <Text style={styles.text}>I'm Home screen</Text>
     </View>
   );
 }
