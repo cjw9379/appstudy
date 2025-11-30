@@ -1,9 +1,31 @@
-import { useState } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useEffect, useState } from 'react';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 //useState 생년월일 문자열 저장
 
 export default function SettingsScreen(){
     const [birthday, setBirthday]=useState("");//문자열 초기화
+
+    useEffect(() => {//useEffect import 해야 함
+        const loadBirthday=async () => {
+            try {
+                const saved=await AsyncStorage.getItem("birthday");//getItem
+                if (saved) setBirthday(saved);
+            } catch (e) {
+                console.log("불러오기 오류: ",e);
+            }
+        };
+        loadBirthday();//위에서 정의한 함수 실행
+    }, []);//[]는 한 번만 실행해라!
+
+    const saveBirthday=async()=>{
+        try {
+            await AsyncStorage.setItem("birthday",birthday);//setItem
+            alert("저장 완료!");
+        } catch (e){
+            console.log("저장 오류: ",e);
+        }
+    };
 
     return (
         <View style={styles.container}>
